@@ -16,11 +16,11 @@ const sample = [
   ["forward", 2],
 ]
 
-const {x, y, aim} = sample.reduce(({x, y, aim}, [dir, n]) => ({
-  aim: dir == "up"      ? aim - n     : 
-       dir == "down"    ? aim + n     : aim,
-  x:   dir == "forward" ? x + n       : x,
-  y:   dir == "forward" ? y + aim * n : y,
-}), {x: 0, y: 0, aim: 0})
+const {x, y, aim} = sample.reduce(({x, y, aim}, [dir, n]) => (
+  { aim: (dir == "up"      ? aim - n     : 
+          dir == "down"    ? aim + n     : aim),
+    x:   (dir == "forward" ? x + n       : x),
+    y:   (dir == "forward" ? y + aim * n : y) }
+), {x: 0, y: 0, aim: 0})
 
 console.log(x * aim, x * y)

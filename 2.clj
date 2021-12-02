@@ -14,13 +14,13 @@
              ["down" 8]
              ["forward" 2]))
 
-(let [{:keys [x y aim]}
-      (reduce
-       (fn [{:keys [x y aim] :as acc} [dir n]]
-         (merge acc
-                (condp = dir
-                  "up" {:aim (- aim n)}
-                  "down" {:aim (+ aim n)}
-                  {:x (+ x n) :y (+ y (* aim n))})))
-       {:x 0 :y 0 :aim 0} lines)]
+(defn calc [col]
+  (reduce
+   (fn [{:keys [x y aim]} [dir n]]
+     {:x (if (= dir "forward") (+ x n) x)
+      :y (if (= dir "forward") (+ y (* aim n)) y)
+      :aim (condp = dir "up" (- aim n) "down" (+ aim n) aim)})
+   {:x 0 :y 0 :aim 0} col))
+
+(let [{:keys [x y aim]} (calc lines)]
   {:part1 (* x aim) :part2 (* x y)})
