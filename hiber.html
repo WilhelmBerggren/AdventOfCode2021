@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              red: "#E81623",
+              redHover: "#df3536",
+              green: "#09B584",
+              greenHover: "#07986f",
+              yellow: "#c8c804",
+              purple: "#6424cc",
+              blue: "#00aeff",
+              white: "#ffffff",
+              black: "#000000",
+              gray: "#0c0c0c",
+              mediumGray: "#b4b4b4",
+              lightGray: "#e4e4e4",
+              lighterGray: "#efefef",
+              veryLightGray: "#e9e9ec",
+              appDarkGray: "#454654",
+              appBlack: "#1b1c20",
+              appDarkGrayLighter: "#34363c",
+              appGrey3: "#24252b",
+              appLightGray: "#a7a9af",
+              purple: "#6424CC",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="p-0 m-0">
+    <div class="flex">
+      <!-- Top bar -->
+      <div class="max-h-[67px] w-full bg-appGrey3 flex flex-row place-content-between p-[12px]">
+        <!-- Logo -->
+        <div class="mr-[20px] h-[48px] min-w-[48px]">
+          <img src="https://cdn.hibervr.com/static/logos/hiber-head-v2.2.png" alt="Hiber logo small" class="flex md:hidden h-[40px] ml-[8px]">
+          <img src="https://cdn.hibervr.com/static/logos/hiber-beta-white-2-2.png" alt="Hiber logo small" class="hidden md:flex h-[40px]">
+        </div>
+        <!-- Search -->
+        <div class="h-[40px] w-[335px] bg-[#343540] rounded-[8px] flex items-center hidden md:flex">
+          <input class="font-[500] text-[14px] m-[16px] bg-transparent focus:outline-none" placeholder="Search"></input>
+        </div>
+        <!-- Create button -->
+        <div class="select-none">
+          <button class="bg-green rounded-[8px] md:w-[144px] w-[40px] h-[40px] text-white text-[12px]">
+            <div class="flex justify-center align-center ">
+              <!-- Add -->
+              <svg class="md:mr-[8px] md:mt-[2px]" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="7" cy="7" r="7" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.44742 9.94737C6.44742 10.2526 6.69484 10.5 7.00005 10.5C7.30526 10.5 7.55268 10.2526 7.55268 9.94737V7.55269H9.94737C10.2526 7.55269 10.5 7.30527 10.5 7.00006C10.5 6.69485 10.2526 6.44743 9.94737 6.44743L7.55268 6.44743V4.05263C7.55268 3.74742 7.30526 3.5 7.00005 3.5C6.69484 3.5 6.44742 3.74742 6.44742 4.05263V6.44743H4.05263C3.74742 6.44743 3.5 6.69485 3.5 7.00006C3.5 7.30527 3.74742 7.55269 4.05263 7.55269H6.44742V9.94737Z" fill="#24C790"/>
+              </svg>              
+              <div class="hidden md:flex">Create Game</div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
